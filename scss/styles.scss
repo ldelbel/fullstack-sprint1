@@ -130,3 +130,69 @@ html {
     }
   }
 }
+
+.main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+
+  nav {
+    height: 2.5rem;
+    border-bottom: 1px solid $gray-line;
+    
+    ol {
+      display: flex;
+      font-size: 0.8rem;
+      font-weight: 600;
+
+      li {
+        line-height: 2rem;
+        color: #333;
+
+        &:not(:last-child):after {
+          content: "/";
+          margin: 0 0.7rem;
+          color: #777;
+          font-size: 0.85rem;
+        }
+      }
+
+      a {
+        color: rgba(0,0,0,0.5);
+      }
+    }
+  }
+}
+
+.filters {
+  height: 2rem;
+  color: #888;
+  border-bottom: 1px solid $gray-line;
+
+  ul {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &:after {
+        // content: url("../assets/chevron_down.svg");
+        // margin: 0 0.3rem;
+        display: inline-block;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0 0.5rem;
+        content: "";
+        background: url("../assets/chevron_down.svg") no-repeat 0 0;
+        background-size: 100%;
+      }
+    }
+  }
+}
