@@ -1,5 +1,12 @@
 html {
   font-family: "Open Sans", sans-serif;
+  font-size: 100%;
+}
+
+@media screen and (max-width: 780px) {
+  html {
+    font-size: 80%;
+  }
 }
 
 .header {
@@ -81,41 +88,55 @@ html {
 }
 
 .header__search {
+  position: relative;
+}
+
+.header__search input {
   width: 100%;
   height: 2.5rem;
   border-radius: 5px;
   border: 1px solid #e4e4e4;
   margin-bottom: 0.3rem;
-  padding: 0.2rem 1rem;
-  position: relative;
+  padding: 0.2rem 2.5rem;
 }
 
-.header__search::-webkit-input-placeholder {
+.header__search input::-webkit-input-placeholder {
   color: #c7c7c7;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
-.header__search:-ms-input-placeholder {
+.header__search input:-ms-input-placeholder {
   color: #c7c7c7;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
-.header__search::-ms-input-placeholder {
+.header__search input::-ms-input-placeholder {
   color: #c7c7c7;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
-.header__search::placeholder {
+.header__search input::placeholder {
   color: #c7c7c7;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
-.header__search:hover {
+.header__search input:hover {
   border: 1px solid #333;
+}
+
+.header__search:before {
+  content: "";
+  background: url("../assets/search.svg") no-repeat scroll 0.5rem 0.5rem;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 @media screen and (max-width: 1200px) {
@@ -156,10 +177,6 @@ html {
   padding: 1rem;
 }
 
-.breadcrumbs {
-  margin-bottom: 1rem;
-}
-
 .breadcrumbs nav {
   height: 2.5rem;
   border-bottom: 1px solid #e4e4e4;
@@ -189,10 +206,13 @@ html {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.breadcrumbs nav ol a:hover {
+  text-decoration: underline;
+}
+
 .filters {
-  height: 2rem;
+  height: 3rem;
   color: #888;
-  border-bottom: 1px solid #e4e4e4;
 }
 
 .filters ul {
@@ -201,6 +221,13 @@ html {
   display: flex;
   text-transform: uppercase;
   font-size: 0.7rem;
+  line-height: 3rem;
+}
+
+@media screen and (max-width: 780px) {
+  .filters ul {
+    font-size: 0.6rem;
+  }
 }
 
 .filters ul li {
@@ -210,6 +237,18 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 780px) {
+  .filters ul li {
+    padding-left: 0.2rem;
+  }
+}
+
+.filters ul li:hover {
+  cursor: pointer;
+  background-color: #f8f8f8;
 }
 
 .filters ul li:after {
@@ -222,8 +261,15 @@ html {
   background-size: 100%;
 }
 
+@media screen and (max-width: 780px) {
+  .filters ul li:after {
+    margin: 0 0.25rem;
+  }
+}
+
 .products {
-  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e4e4e4;
 }
 
 .products ol {
@@ -232,6 +278,13 @@ html {
   -ms-grid-columns: (calc((100% - 3rem) / 4))[4];
       grid-template-columns: repeat(4, calc((100% - 3rem) / 4));
   gap: 1rem;
+}
+
+@media screen and (max-width: 780px) {
+  .products ol {
+    -ms-grid-columns: (calc((100% - 1rem) / 2))[2];
+        grid-template-columns: repeat(2, calc((100% - 1rem) / 2));
+  }
 }
 
 .products ol li div:hover {
