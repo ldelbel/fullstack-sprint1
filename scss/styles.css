@@ -221,4 +221,50 @@ html {
   background: url("../assets/chevron_down.svg") no-repeat 0 0;
   background-size: 100%;
 }
+
+.products {
+  margin-top: 0.5rem;
+}
+
+.products ol {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc((100% - 3rem) / 4))[4];
+      grid-template-columns: repeat(4, calc((100% - 3rem) / 4));
+  gap: 1rem;
+}
+
+.products ol li div:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03), -1px 1px 1px rgba(0, 0, 0, 0.03);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.03), -1px 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+.products ol li div img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.products ol li div p {
+  font-size: 0.6rem;
+}
+
+.products ol li div p:first-of-type {
+  margin: 0 0.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #777;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1rem;
+}
+
+.products ol li div p:last-of-type {
+  font-size: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  color: #333;
+  padding-bottom: 2rem;
+}
 /*# sourceMappingURL=styles.css.map */
