@@ -3,10 +3,13 @@ html {
 }
 
 .header {
-  padding: 1rem 4rem 0 4rem;
-  padding-bottom: 1rem;
+  padding: 1rem 4rem 1rem 4rem;
   border-bottom: 1px solid #e4e4e4;
-  margin-bottom: 100vh;
+}
+@media screen and (max-width: 780px) {
+  .header {
+    padding: 1rem 2rem 1rem 1rem;
+  }
 }
 .header__logo {
   display: flex;
@@ -14,6 +17,50 @@ html {
   justify-content: center;
   height: 4rem;
   margin-bottom: 0.5rem;
+  position: relative;
+}
+.header__logo__full {
+  display: block;
+}
+@media screen and (max-width: 780px) {
+  .header__logo__full {
+    display: none;
+  }
+}
+.header__logo__short {
+  display: none;
+}
+@media screen and (max-width: 780px) {
+  .header__logo__short {
+    display: block;
+    width: 6.5rem;
+  }
+}
+.header__menu {
+  width: 1.5rem;
+  opacity: 0.35;
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  display: none;
+}
+.header__menu:hover {
+  cursor: pointer;
+}
+.header__menu__img {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("../assets/menu.svg");
+  background-position: center;
+  background-size: contain;
+}
+@media screen and (max-width: 1200px) {
+  .header__menu {
+    display: block;
+  }
+}
+.header__menu p {
+  font-size: 0.55rem;
 }
 .header__search {
   width: 100%;
@@ -31,6 +78,11 @@ html {
 }
 .header__search:hover {
   border: 1px solid #333;
+}
+@media screen and (max-width: 1200px) {
+  .header__navigation {
+    display: none;
+  }
 }
 .header__navigation__links {
   display: flex;
